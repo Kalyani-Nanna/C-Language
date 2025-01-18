@@ -1,32 +1,29 @@
-
 /*
-Write a C program to convert temperature from Fahrenheit to Celsius.
-
-C = (F - 32) * (5.0 / 9.0)
-
-Input as :
-
-Enter temperature in Fahrenheit: 100
-
-Expected output:
-
-100.00 Fahrenheit is 37.78 Celsius.
+Write a program to take input for seconds from the user ,
+ And convert it into Hour, Minutes , Second format.
 */
 
 #include<stdio.h>
 void main()
 {
-    float Fahrenheit, Celsius;
-    printf("\nEnter Fahrenheit: ");
-    scanf("%f", &Fahrenheit);
-    Celsius = (Fahrenheit - 32) * (5.0/9.0);
-    printf("%.2f Fahrenheit is %.2f Celcius.", Fahrenheit, Celsius);
+    int sec;
+    int hours, minutes, seconds;
+    printf("\nEnter seconds: ");
+    scanf("%d",&sec);
+
+    hours = sec / 3600;
+
+    minutes = (sec % 3600) / 60;
+
+    seconds = (sec % 3600) % 60;
+
+    printf("\n%d seconds contains %d hours, %d minutes and %d seconds.", sec, hours, minutes, seconds);
 }
 
-/* Output
-Enter Fahrenheit: 100
-100.00 Fahrenheit is 37.78 Celcius.
+/*
+Enter seconds: 3671
+3671 seconds contains 1 hours, 1 minutes and 11 seconds
 
-Enter Fahrenheit: 200
-200.00 Fahrenheit is 93.33 Celcius.
+Enter seconds: 3600
+3600 seconds contains 1 hours, 0 minutes and 0 seconds
 */
