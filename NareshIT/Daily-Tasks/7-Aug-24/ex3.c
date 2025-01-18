@@ -1,25 +1,27 @@
 /*
-Que 2 : Write a Cprogram to print sum of N natural 
-numbers without using loops.
+Que 3 :  Write a 'C' program to check and print that given number is 
+even or odd without using ternary operator and control statments.
 
-Sample input : int n = 10
-Sample output : 55
+Sample input : int a = 10
+Sample Output : EVEN
+
+Sample input : int a = 125
+Sample Output : ODD 
 */
 
 #include<stdio.h>
 void main()
 {
-    int n, sum;
+    int n;
     printf("\nEnter a number: ");
     scanf("%d", &n);
-    sum = n*(n+1)/2;
-    printf("\nSum of %d natural numbers is %d", n, sum);
+    n%2==0 && printf("EVEN") || printf("ODD");
 }
 
-/* Output
+/* output
 Enter a number: 10
-Sum of 10 natural numbers is 55
+EVEN
 
-Enter a number: 20
-Sum of 20 natural numbers is 210
+Enter a number: 125
+ODD
 */
