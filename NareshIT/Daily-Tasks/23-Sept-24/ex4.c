@@ -1,49 +1,77 @@
 /*
-Que 3 : Write a program in C to check whether a number is a prime number or not by using the function.
+Que 4 : Write a C program to find the biggest number between three number using the function.
 -------
 
 -> create int main() function.
--> create bool isPrime(int n) function.
--> in main function read one number and call isPrime(int n) function. here isPrime(int n) function will perform the operation and will return true or false to the main function.
--> in main function catch the boolean result and according that print the proper message.
+-> create int biggestNumber(int a, int b, int c) function.
+-> in main function read three numbers as input and call biggestNumber(int a, int b, int c) function. here biggestNumber(int a, int b, int c) function will perform the operation and will return biggest number as result to the main function.
+-> in main function catch the biggest number which is return by biggestNumber(int a, int b, int c) function print the result.
 
-Sample input : Input a positive number : 5
 
-Sample output : The number 5 is a prime number.
+Sample input : Input three positive number : 13 31 19
+
+Sample output : The biggest number is 31.
 */
 
 #include<stdio.h>
 void main()
 {
-    int n, i, j, c;
-    printf("\nEnter a positive number: ");
-    scanf("%d", &n);
-    if(isprime(n) == 2){
-        printf("\nThe number %d is a Prime number", n);
-    }else{
-        printf("\nThe number %d is not a prime number", n);
-    }
-    // printf(isprime(n) == 2 ? "The number is a Prime number" : "The number is a not prime number");
-}
-
-int isprime(int n)
-{
-    int c, i,j;
-    c = 0;
-    for (i = 1; i <= n; i++)
+    int a, b, c, bnum;
+    printf("\nEnter 3 numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+    bnum = biggestNumber(a, b, c);
+    if(bnum == a)
     {
-        if (n % i == 0)
-        {
-            c++;
-        }
+        printf("\n%d (a) is big", bnum);
     }
-    return c;
+    else if (bnum == b)
+    {
+        printf("\n%d (b) is big", bnum);
+    }
+    else if (bnum == 1)
+    {
+        printf("\nAll are equal");
+    }
+    else{
+        printf("\n%d (c) is big", bnum);
+    }
+}
+   
+
+int biggestNumber(int a, int b, int c)
+{
+    if(a>b && a>c){
+        return a;
+    }
+    else if(b>a && b>c){
+        return b;
+    }
+    else if(c>a && c>b)
+    {
+        return c;
+    }
+    if(a==b && a>c)
+    {
+        return a;
+    }
+    else if(b==c && b>a)
+    {
+        return b;
+    }
+    else if(a==c && a>b)
+    {
+        return a;
+    }
+    else if(a==b && b==c && a==c)
+    {
+        return 1;
+    }
 }
 
 /*
-Enter a positive number: 5
-The number 5 is a Prime number
+Enter 3 numbers: 10
+20
+30
 
-Enter a positive number: 4
-The number 4 is not a prime number
+30 (c) is big
 */
