@@ -1,52 +1,72 @@
-
 /*
-4.
-Write a program in C to print the elements of an array in reverse 
-order using pointer.
+5 : Write a C program to input elements in array and 
+search an element in array using pointers. 
 --------
 
-Sample input :
-Input the number of elements to store in the array (max 15) : 5
-Input 5 number of elements in the array : 2 3 4 5 6
+Sample input : {10, 20, 30, 40, 50, 60, 70}
 
-Sample output : 
-The elements of array in reverse order are :  6 5 4 3 2                                                               
+Input element to search: 25
+
+Sample output :
+
+25 does not exists in array
 */
 
 #include<stdio.h>
 void main()
 {
-    int a[10], *p, n, i;
-    printf("\nEnter array size (max 15): ");
+    int i, c=0, n, a[100], *p, ele;
+    printf("\nEnter array size: ");
     scanf("%d", &n);
-    if(n <= 15)
+    printf("\nEnter %d elements: ", n);
+    for(i=0; i<n; i++)
     {
-        printf("\nEnter %d elements: ", n);
-        for(i=0; i<n; i++)
+        scanf("%d", &a[i]);
+    }
+    p=a;
+    printf("\nEnter element to search: ");
+    scanf("%d", &ele);
+    for(i=0; i<n; i++)
+    {
+        if(p[i] == ele)
         {
-            scanf("%d", &a[i]);
+            c=1;
+            break;
         }
-        p=a;
-        printf("\nReverse elements are: ");
-        for(i=n-1; i>=0; i--)
-        {
-            printf("%d ", p[i]);
-        }
+    }
+    if(c!=0){
+        printf("\n%d exists in the array", ele);
     }else{
-        printf("\nPlease enter array size less than 15");
+        printf("\n%d does not exists in the array", ele);
     }
 }
 
 /*
-Enter array size (max 15): 5
+Enter array size: 7
 
-Enter 5 elements: 2 3 4 5 6
+Enter 7 elements: 10
+20
+30
+40
+50
+60
+70
 
-Reverse elements are: 6 5 4 3 2
+Enter element to search: 25
+
+25 does not exists in the array
 */
 
 /*
-Enter array size (max 15): 18
+Enter array size: 5
 
-Please enter array size less than 15
+Enter 5 elements: 1
+2
+3
+4
+5
+
+Enter element to search: 4
+
+4 exists in the array
 */
