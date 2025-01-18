@@ -1,11 +1,11 @@
 /*
-Que 4 : Write C program to given pattern.
+Que 5 : Write C program to given pattern.
 --------
 
-A  B  C  D  
-B  C  D  E
-C  D  E  F
-D  E  F  G
+A  E  I  M
+B  F  J  N
+C  G  K  O
+D  H  L  P
 */
 
 #include<stdio.h>
@@ -20,9 +20,9 @@ void main()
         for(j=1; j<=nc; j++)
         {
             printf("%2c", a);
-            a++;
+            a = a+4;
         }
-        a = a - 3;
+        a = a - 15;
         printf("\n");
     }
 }
@@ -30,8 +30,8 @@ void main()
 /*
 Enter number of rows & columns: 4
 4
- A B C D
- B C D E
- C D E F
- D E F G
+ A E I M
+ B F J N
+ C G K O
+ D H L P
 */
